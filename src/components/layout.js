@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
+import favicon from '../images/favicon.png';
+
 import './layout.css'
 
 const Layout = ({ children }) => (
@@ -22,18 +23,18 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: 'Lee\'s personal website!' },
+            { name: 'keywords', content: 'Lee Ma, Lee, Ma, Software, Waterloo, UW, University of Waterloo, Developer, Engineer' },
+          ]}
+          link={[
+            { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
           ]}
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
+            margin: '0',
             paddingTop: 0,
           }}
         >
