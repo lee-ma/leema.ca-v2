@@ -43,18 +43,6 @@ const Visual = styled.div`
   }
 `
 
-const VisualMobile = styled.div`
-  width: 20%;
-  height: fit-content;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  margin-right: 17.5%;
-
-  @media(max-width: 1024px) {
-    width: 50vw;
-    margin-top: 2em;
-  }
-`
-
 const HeaderText = styled.h1`
   font-size: 4em;
   margin-bottom: 0.1em;
@@ -149,7 +137,7 @@ class IndexPage extends React.Component{
             <SubHeaderText>
               A journal trying too hard to have a cool name. 🖋️
             </SubHeaderText>
-            <BodyText>Building a very minimalistic journal app.</BodyText>
+            <BodyText>Building a minimalistic journal app.</BodyText>
             <Button hoverColor={"#ff8a65"} href="https://github.com/lee-ma/zephyr"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
           </SummaryText>
           <Visual>
@@ -167,9 +155,9 @@ class IndexPage extends React.Component{
             <BodyText>The first thing I ever built.</BodyText>
             <Button hoverColor={"#68E182"} href="https://github.com/lee-ma/daytripandroid"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
           </SummaryText>
-          <VisualMobile>
-              <Img fluid={this.props.data.daytrip.childImageSharp.fluid}></Img>
-            </VisualMobile>
+          <Visual>
+            <Img fluid={this.props.data.daytrip.childImageSharp.fluid}></Img>
+          </Visual>
         </Container>
       </Layout>
     )
@@ -183,16 +171,6 @@ export const fluidImage = graphql`
 fragment fluidImage on File {
   childImageSharp {
     fluid( maxWidth: 1680) {
-      ...GatsbyImageSharpFluid
-    }
-  }
-}
-`;
-
-export const fluidImageMobile = graphql`
-fragment fluidImageMobile on File {
-  childImageSharp {
-    fluid( maxHeight: 864) {
       ...GatsbyImageSharpFluid
     }
   }
@@ -215,7 +193,7 @@ export const pageQuery = graphql`
       ...fluidImage
     },
     daytrip: file(relativePath: { eq: "daytrip.png" }) {
-      ...fluidImageMobile
+      ...fluidImage
     }
   }
 `
