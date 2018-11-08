@@ -11,7 +11,7 @@ import pdf from '../files/leemaresume.pdf'
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding-top: 20vh;
   padding-left: 5%;
   padding-right: 5%;
@@ -25,11 +25,6 @@ const Container = styled.div`
     display: inline-block !important
     justify-content: center;
   };
-  @media(max-width: 768px) {
-    padding-top: 2.5vh;
-    display: inline-block !important
-    justify-content: center;
-  }
 `
 
 const SummaryText = styled.div`
