@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "lee-ma-site",
+  "description": "Lee Ma personal site",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Lee Ma",
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.2",
     "babel-plugin-styled-components": "^1.8.0",
@@ -28,7 +28,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "GPLV3",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -41,6 +41,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/lee-ma/leema.ca-v2"
   }
 }
