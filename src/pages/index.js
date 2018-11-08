@@ -82,7 +82,7 @@ const Button = styled.a`
   border: 2px solid;
   font-family: "Helvetica Neue", "serif";
   transition: 0.2s;
-  margin-right: 5%;
+  margin-right: 3%;
 
   &:hover {
     background-color: ${props=> props.btnBackground || "#feffff"};
