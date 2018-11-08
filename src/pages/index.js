@@ -25,6 +25,11 @@ const Container = styled.div`
     display: inline-block !important
     justify-content: center;
   };
+  @media(max-width: 768px) {
+    padding-top: 2.5vh;
+    display: inline-block !important
+    justify-content: center;
+  }
 `
 
 const SummaryText = styled.div`
