@@ -25,6 +25,9 @@ const Container = styled.div`
     display: inline-block !important
     justify-content: center;
   };
+  @media(max-width: 768px) {
+    padding-top: 5vh;
+  }
 `
 
 const SummaryText = styled.div`
