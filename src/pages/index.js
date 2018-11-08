@@ -130,6 +130,21 @@ const ScrollUpBtn = styled.a`
   }
 `
 
+const LoadingAnimation = styled.h1`
+  background-color: #00BFB2;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 80s linear infinite;
+  -webkit-transform: translate3d(0,0,0);
+	-webkit-backface-visibility: hidden;
+
+  @-webkit-keyframes aitf {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+` 
+
 class IndexPage extends React.Component{
   constructor(props) {
     super(props)
@@ -144,7 +159,7 @@ class IndexPage extends React.Component{
 
   render() {
 
-    let pageContent = "loading..."
+    let pageContent = (<LoadingAnimation>Lee Ma</LoadingAnimation>)
 
     if (this.state.showPage) {
       pageContent =  (
