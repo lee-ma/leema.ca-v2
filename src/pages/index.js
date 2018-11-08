@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import {FaGithub, FaLinkedin, FaFileAlt, FaChevronDown} from 'react-icons/fa'
+import ReactFullpage from '@fullpage/react-fullpage/dist/react-fullpage-commonjs';
 // import ReactFullpage from '@fullpage/react-fullpage'
 
 import Layout from '../components/layout'
@@ -153,7 +154,6 @@ class IndexPage extends React.Component{
   }
 
   componentDidMount() {
-    let ReactFullpage = require('@fullpage/react-fullpage')
     this.setState({showPage: true})
   }
 
