@@ -72,6 +72,7 @@ const BodyText = styled.div`
 
   @media(max-width: 768px) {
     font-size: 16px;
+    margin-bottom: 1em;
   }
 `
 
@@ -206,7 +207,7 @@ class IndexPage extends React.Component{
                     </BodyText>
                     <BodyText><p>Unfortunately this repo is private :(</p></BodyText>
                   </SummaryText>
-                  <Visual>
+                  <Visual style={{marginTop: 0}}>
                       <Img fluid={this.props.data.atheneum.childImageSharp.fluid}></Img>
                   </Visual>
                   <ScrollBtn href="#zephyr"><FaChevronDown/></ScrollBtn>
