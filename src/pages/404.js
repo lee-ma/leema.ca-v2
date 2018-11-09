@@ -1,9 +1,6 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'styled-components'
-
-import Img from 'gatsby-image'
 
 const Container = styled.div`
   width: 100%;
@@ -97,22 +94,3 @@ class NotFoundPage extends React.Component {
 }
 
 export default NotFoundPage
-
-export const notFoundImage = graphql`
-fragment notFoundImage on File {
-  childImageSharp {
-    fluid( maxWidth: 1680) {
-      ...GatsbyImageSharpFluid
-    }
-  }
-}
-`;
-
-
-export const pageQuery = graphql`
-  query {
-    peppers: file(relativePath: { eq: "peppers.jpg" }) {
-      ...notFoundImage
-    },
-  }
-`

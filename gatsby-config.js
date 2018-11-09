@@ -38,9 +38,7 @@ module.exports = {
         // Setting this parameter is also optional
         respectDNT: true,
         // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        sampleRate: 5,
-        siteSpeedSampleRate: 10
+        exclude: ["/preview/**", "/do-not-track/me/too/"]
       },
     },
     {
