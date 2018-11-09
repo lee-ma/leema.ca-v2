@@ -6,7 +6,7 @@ import ReactFullpage from '@fullpage/react-fullpage/dist/react-fullpage-commonjs
 
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
-import pdf from '../../static/leemaresume.pdf'
+import pdf from '../files/leemaresume.pdf'
 
 const Container = styled.div`
   width: 100%;
