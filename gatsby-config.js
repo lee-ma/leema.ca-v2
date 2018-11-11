@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Lee Ma',
   },
+  pathPrefix: `/files`,
   plugins: [
     'gatsby-plugin-react-helmet',
     {
