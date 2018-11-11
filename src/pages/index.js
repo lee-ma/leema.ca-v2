@@ -6,7 +6,6 @@ import ReactFullpage from '@fullpage/react-fullpage/dist/react-fullpage-commonjs
 
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
-import pdf from '../files/leemaresume.pdf'
 
 const Container = styled.div`
   width: 100%;
@@ -168,7 +167,7 @@ class IndexPage extends React.Component{
                       <BodyText>Hot Sauce Enthusiast. Ski Slope Dominator. Software Developer.</BodyText>
                         <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} href="https://github.com/lee-ma"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
                         <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} href="https://linkedin.com/in/lma321"><FaLinkedin style={{verticalAlign: "text-top"}}/> Linkedin</Button>
-                        <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} target="_blank" href={pdf}><FaFileAlt style={{verticalAlign: "text-top"}}/> Resume</Button>
+                        <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} target="_blank" href='./leemaresume.pdf'><FaFileAlt style={{verticalAlign: "text-top"}}/> Resume</Button>
                     </SummaryText>
                     <Visual>
                       <Img fluid={this.props.data.me.childImageSharp.fluid}></Img>
