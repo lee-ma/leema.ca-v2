@@ -82,6 +82,7 @@ const Button = styled.a`
   text-decoration: none;
   color: ${props=> props.defColor || "#feffff"};
   border: 2px solid;
+  border-color: ${props=> props.defColor || "#feffff"};
   font-family: "Helvetica Neue", "serif";
   transition: 0.2s;
   margin-right: 3%;
