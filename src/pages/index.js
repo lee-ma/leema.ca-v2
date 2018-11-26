@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, withPrefix } from 'gatsby'
 import styled from 'styled-components'
 import {FaGithub, FaLinkedin, FaFileAlt, FaChevronDown} from 'react-icons/fa'
-import ReactFullpage from '@fullpage/react-fullpage/dist/react-fullpage-commonjs'
+import ReactFullpage from '@fullpage/react-fullpage'
 
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
@@ -59,7 +59,7 @@ const HeaderText = styled.h1`
 `
 
 const SubHeaderText = styled.h3`
-  font-size: 2em;
+  font-size: 1.75em;
   font-weight: 600;
   margin-bottom: 1.25em;
 
@@ -138,148 +138,139 @@ class IndexPage extends React.Component{
   constructor(props) {
     super(props)
 
-    this.state = {showPage: false}
-  }
-
-  componentDidMount() {
-    this.setState({showPage: true})
   }
 
   render() {
-    if(this.state.showPage){
-      return (
-        <ReactFullpage
-          anchors={['about', 'foodiy', 'atheneum', 'zephyr', 'daytrip', 'blog']}
-          licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
-          render={({ state, fullpageApi }) => {
-  
-          return (
-            <ReactFullpage.Wrapper>
-              <Layout>
-                <div className="section">
-                  <Container>
-                    <SummaryText>
-                      <HeaderText>
-                        Lee Ma
-                      </HeaderText>
-                      <SubHeaderText>
-                        ECE 2022, University of Waterloo 🇨🇦
-                      </SubHeaderText>
-                      <BodyText>Hot Sauce Enthusiast. Ski Slope Dominator. Software Developer.</BodyText>
-                        <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} href="https://github.com/lee-ma"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
-                        <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} href="https://linkedin.com/in/lma321"><FaLinkedin style={{verticalAlign: "text-top"}}/> Linkedin</Button>
-                        <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} target="_blank" href={'./leemaresume.pdf'}><FaFileAlt style={{verticalAlign: "text-top"}}/> Resume</Button>
-                    </SummaryText>
-                    <Visual>
-                      <Img fluid={this.props.data.me.childImageSharp.fluid}></Img>
-                    </Visual>
-                    <ScrollBtn black href="#foodiy"><FaChevronDown/></ScrollBtn>
-                  </Container>
-                </div>
-                <div className="section">
-                  <Container background={"#00C853"}>
-                      <SummaryText white>
-                        <HeaderText>
-                          Foodiy
-                        </HeaderText>
-                        <SubHeaderText>
-                          Find delicious recipes to cook at home. 🥕
-                        </SubHeaderText>
-                        <BodyText>
-                          <p>Attempting to make a food recipe site that isn't cluttered.<br></br>(React + Redux / Express + Sequelize + PostgreSQL)</p>
-                        </BodyText>
-                        <Button hoverColor={"#00C853"} href="https://github.com/lee-ma/foodiy"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
-                      </SummaryText>
-                      <Visual>
-                          <Img fluid={this.props.data.foodiy.childImageSharp.fluid}></Img>
-                      </Visual>
-                      <ScrollBtn href="#atheneum"><FaChevronDown/></ScrollBtn>
-                    </Container>
-                </div>
-                <div className="section">
-                  <Container background={"#00BFB2"}>
+    return (
+      <ReactFullpage
+        anchors={['about', 'foodiy', 'atheneum', 'zephyr', 'daytrip', 'blog']}
+        licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
+        render={({ state, fullpageApi }) => {
+
+        return (
+          <ReactFullpage.Wrapper>
+            <Layout>
+              <div className="section">
+                <Container>
+                  <SummaryText>
+                    <HeaderText>
+                      Lee Ma
+                    </HeaderText>
+                    <SubHeaderText>
+                      ECE 2022, University of Waterloo 🇨🇦
+                    </SubHeaderText>
+                    <BodyText>Hot Sauce Enthusiast. Ski Slope Dominator. Software Developer.</BodyText>
+                      <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} href="https://github.com/lee-ma"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
+                      <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} href="https://linkedin.com/in/lma321"><FaLinkedin style={{verticalAlign: "text-top"}}/> Linkedin</Button>
+                      <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} target="_blank" href={'./leemaresume.pdf'}><FaFileAlt style={{verticalAlign: "text-top"}}/> Resume</Button>
+                  </SummaryText>
+                  <Visual>
+                    <Img fluid={this.props.data.me.childImageSharp.fluid}></Img>
+                  </Visual>
+                  <ScrollBtn black href="#foodiy"><FaChevronDown/></ScrollBtn>
+                </Container>
+              </div>
+              <div className="section">
+                <Container background={"#00C853"}>
                     <SummaryText white>
                       <HeaderText>
-                        Atheneum
+                        Foodiy
                       </HeaderText>
                       <SubHeaderText>
-                        Connect with local students and tutors. 📖
+                        Find delicious recipes to cook at home. 🥕
                       </SubHeaderText>
                       <BodyText>
-                        <p>Building a web app to help people learn new things.<br></br>(React + Redux / Express + Mongoose + MongoDB)</p>
+                        <p>Attempting to make a food recipe site that isn't cluttered.<br></br>(React + Redux / Express + Sequelize + PostgreSQL)</p>
                       </BodyText>
-                      <BodyText><p>Unfortunately this repo is private :(</p></BodyText>
-                    </SummaryText>
-                    <Visual style={{marginTop: 0}}>
-                        <Img fluid={this.props.data.atheneum.childImageSharp.fluid}></Img>
-                    </Visual>
-                    <ScrollBtn href="#zephyr"><FaChevronDown/></ScrollBtn>
-                  </Container>
-                </div>
-                <div className="section">
-                  <Container background={"#ff8a65"}>
-                    <SummaryText white>
-                      <HeaderText>
-                        Zephyr
-                      </HeaderText>
-                      <SubHeaderText>
-                        A journal trying too hard to have a cool name. 🖋️
-                      </SubHeaderText>
-                      <BodyText>
-                        <p>Building a minimalistic journal app.<br></br>(React + Redux / Express + Mongoose + MongoDB)</p>
-                      </BodyText>
-                      <Button hoverColor={"#ff8a65"} href="https://github.com/lee-ma/zephyr"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
+                      <Button hoverColor={"#00C853"} href="https://github.com/lee-ma/foodiy"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
                     </SummaryText>
                     <Visual>
-                        <Img fluid={this.props.data.zephyr.childImageSharp.fluid}></Img>
+                        <Img fluid={this.props.data.foodiy.childImageSharp.fluid}></Img>
                     </Visual>
-                    <ScrollBtn href="#daytrip"><FaChevronDown/></ScrollBtn>
+                    <ScrollBtn href="#atheneum"><FaChevronDown/></ScrollBtn>
                   </Container>
-                </div>
-                <div className="section">
-                  <Container background={"#68E182"}>
-                    <SummaryText white>
-                      <HeaderText>
-                        Daytrip
-                      </HeaderText>
-                      <SubHeaderText>
-                        A lifestyle android app. 💪
-                      </SubHeaderText>
-                      <BodyText>The first thing I ever built.<br></br>(Java / Firebase)</BodyText>
-                      <Button hoverColor={"#68E182"} href="https://github.com/lee-ma/daytripandroid"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
-                    </SummaryText>
-                    <Visual>
-                      <Img fluid={this.props.data.daytrip.childImageSharp.fluid}></Img>
-                    </Visual>
-                    <ScrollBtn href="#blog"><FaChevronDown/></ScrollBtn>
-                  </Container>
-                </div>
-                <div className="section">
-                  <Container>
-                    <SummaryText>
-                      <HeaderText>
-                        The Blog
-                      </HeaderText>
-                      <SubHeaderText>
-                        Coming soon. 🕒
-                      </SubHeaderText>
-                      <BodyText></BodyText>
-                      <Button hoverColor={"#68E182"} href="https://github.com/lee-ma/daytripandroid"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
-                    </SummaryText>
-                    <Visual>
-                      <Img fluid={this.props.data.mtn.childImageSharp.fluid}></Img>
-                    </Visual>
-                    <ScrollUpBtn black href="#about">Back to top</ScrollUpBtn>
-                  </Container>
-                </div>
-              </Layout>
-            </ReactFullpage.Wrapper>
-          );
-        }}/>
-      )
-    } else {
-      return <div>Test</div>
-    }
+              </div>
+              <div className="section">
+                <Container background={"#00BFB2"}>
+                  <SummaryText white>
+                    <HeaderText>
+                      Atheneum
+                    </HeaderText>
+                    <SubHeaderText>
+                      Connect with local students and tutors. 📖
+                    </SubHeaderText>
+                    <BodyText>
+                      <p>Building a web app to help people learn new things.<br></br>(React + Redux / Express + Mongoose + MongoDB)</p>
+                    </BodyText>
+                    <BodyText><p>Unfortunately this repo is private :(</p></BodyText>
+                  </SummaryText>
+                  <Visual style={{marginTop: 0}}>
+                      <Img fluid={this.props.data.atheneum.childImageSharp.fluid}></Img>
+                  </Visual>
+                  <ScrollBtn href="#zephyr"><FaChevronDown/></ScrollBtn>
+                </Container>
+              </div>
+              <div className="section">
+                <Container background={"#ff8a65"}>
+                  <SummaryText white>
+                    <HeaderText>
+                      Zephyr
+                    </HeaderText>
+                    <SubHeaderText>
+                      A journal trying too hard to have a cool name. 🖋️
+                    </SubHeaderText>
+                    <BodyText>
+                      <p>Building a minimalistic journal app.<br></br>(React + Redux / Express + Mongoose + MongoDB)</p>
+                    </BodyText>
+                    <Button hoverColor={"#ff8a65"} href="https://github.com/lee-ma/zephyr"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
+                  </SummaryText>
+                  <Visual>
+                      <Img fluid={this.props.data.zephyr.childImageSharp.fluid}></Img>
+                  </Visual>
+                  <ScrollBtn href="#daytrip"><FaChevronDown/></ScrollBtn>
+                </Container>
+              </div>
+              <div className="section">
+                <Container background={"#68E182"}>
+                  <SummaryText white>
+                    <HeaderText>
+                      Daytrip
+                    </HeaderText>
+                    <SubHeaderText>
+                      A lifestyle android app. 💪
+                    </SubHeaderText>
+                    <BodyText>The first thing I ever built.<br></br>(Java / Firebase)</BodyText>
+                    <Button hoverColor={"#68E182"} href="https://github.com/lee-ma/daytripandroid"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
+                  </SummaryText>
+                  <Visual>
+                    <Img fluid={this.props.data.daytrip.childImageSharp.fluid}></Img>
+                  </Visual>
+                  <ScrollBtn href="#blog"><FaChevronDown/></ScrollBtn>
+                </Container>
+              </div>
+              <div className="section">
+                <Container>
+                  <SummaryText>
+                    <HeaderText>
+                      The Blog
+                    </HeaderText>
+                    <SubHeaderText>
+                      Coming soon. 🕒
+                    </SubHeaderText>
+                    <BodyText></BodyText>
+                    <Button hoverColor={"#68E182"} href="https://github.com/lee-ma/daytripandroid"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
+                  </SummaryText>
+                  <Visual>
+                    <Img fluid={this.props.data.mtn.childImageSharp.fluid}></Img>
+                  </Visual>
+                  <ScrollUpBtn black href="#about">Back to top</ScrollUpBtn>
+                </Container>
+              </div>
+            </Layout>
+          </ReactFullpage.Wrapper>
+        );
+      }}/>
+    )
   }
 } 
 
