@@ -257,8 +257,6 @@ class IndexPage extends React.Component{
                     <SubHeaderText>
                       Coming soon. 🕒
                     </SubHeaderText>
-                    <BodyText></BodyText>
-                    <Button hoverColor={"#68E182"} href="https://github.com/lee-ma/daytripandroid"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
                   </SummaryText>
                   <Visual>
                     <Img fluid={this.props.data.mtn.childImageSharp.fluid}></Img>
