@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, withPrefix } from 'gatsby'
 import styled from 'styled-components'
-import {FaGithub, FaLinkedin, FaFileAlt, FaChevronDown} from 'react-icons/fa'
+import {FaGithub, FaLinkedin, FaFileAlt, FaChevronDown, FaYoutube, FaDev} from 'react-icons/fa'
 import ReactFullpage from '@fullpage/react-fullpage'
 
 import Layout from '../components/layout'
@@ -171,6 +171,28 @@ class IndexPage extends React.Component{
                 </Container>
               </div>
               <div className="section">
+                <Container background={"#11213f"}>
+                    <SummaryText white>
+                      <HeaderText>
+                        SmartEQ
+                      </HeaderText>
+                      <SubHeaderText>
+                        Real-time emotion detection. 😄
+                      </SubHeaderText>
+                      <BodyText>
+                        <p>Winner of Sunlife Best Health and Wellness Hack and TD Best Green Hack at QHacks 2019.<br></br>(React / SocketIO / Flask + Microsoft Azure Cognitive Science APIs)</p>
+                      </BodyText>
+                      <Button hoverColor={"#11213f"} href="https://github.com/lee-ma/smarteq"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
+                      <Button hoverColor={"#11213f"} href="https://www.youtube.com/watch?v=ouXz4nOBfD4"><FaYoutube style={{verticalAlign: "text-top"}}/> Video Demo</Button>
+                      <Button hoverColor={"#11213f"} href="https://devpost.com/software/smarteq"><FaDev style={{verticalAlign: "text-top"}}/> Devpost</Button>
+                    </SummaryText>
+                    <Visual>
+                        <Img fluid={this.props.data.smarteq.childImageSharp.fluid}></Img>
+                    </Visual>
+                    <ScrollBtn href="#atheneum"><FaChevronDown/></ScrollBtn>
+                  </Container>
+              </div>
+              <div className="section">
                 <Container background={"#00C853"}>
                     <SummaryText white>
                       <HeaderText>
@@ -289,6 +311,9 @@ fragment fluidImage on File {
 export const pageQuery = graphql`
   query {
     me: file(relativePath: { eq: "me.jpg" }) {
+      ...fluidImage
+    },
+    smarteq: file(relativePath: { eq: "smarteq.png" }) {
       ...fluidImage
     },
     foodiy: file(relativePath: { eq: "foodiy.png" }) {
