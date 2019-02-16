@@ -143,7 +143,7 @@ class IndexPage extends React.Component{
   render() {
     return (
       <ReactFullpage
-        anchors={['about', 'foodiy', 'atheneum', 'zephyr', 'daytrip', 'blog']}
+        anchors={['about', 'smarteq', 'foodiy', 'atheneum', 'zephyr', 'daytrip', 'blog']}
         licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
         render={({ state, fullpageApi }) => {
 
@@ -189,7 +189,7 @@ class IndexPage extends React.Component{
                     <Visual>
                         <Img fluid={this.props.data.smarteq.childImageSharp.fluid}></Img>
                     </Visual>
-                    <ScrollBtn href="#atheneum"><FaChevronDown/></ScrollBtn>
+                    <ScrollBtn href="#smarteq"><FaChevronDown/></ScrollBtn>
                   </Container>
               </div>
               <div className="section">
