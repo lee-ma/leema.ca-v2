@@ -1,10 +1,11 @@
 import React from 'react'
 import { graphql, withPrefix } from 'gatsby'
 import styled from 'styled-components'
-import {FaGithub, FaLinkedin, FaFileAlt, FaChevronDown, FaYoutube, FaDev} from 'react-icons/fa'
+import {FaGithub, FaLinkedin, FaFileAlt, FaChevronDown, FaYoutube, FaDev, FaKeyboard, FaKey} from 'react-icons/fa'
 import ReactFullpage from '@fullpage/react-fullpage'
 
 import Layout from '../components/layout'
+import Experience from '../components/experience'
 import Img from 'gatsby-image'
 
 const Container = styled.div`
@@ -19,10 +20,11 @@ const Container = styled.div`
   background-color: ${props=> props.background || "#feffff"};
 
   @media(max-width: 1024px) {
-    padding-top: 10vh;
+    padding-top: 5vh;
     display: inline-block !important
     justify-content: center;
   };
+
   @media(max-width: 768px) {
     padding-top: 5vh;
   }
@@ -44,7 +46,7 @@ const Visual = styled.div`
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
   @media(max-width: 1024px) {
-    width: 100% !important;
+    width: 75% !important;
     margin-top: 2em;
   }
 `
@@ -53,7 +55,7 @@ const HeaderText = styled.h1`
   font-size: 4em;
   margin-bottom: 0.1em;
 
-  @media(max-width: 768px) {
+  @media(max-width: 1024px) {
     font-size: 3em;
   }
 `
@@ -63,7 +65,7 @@ const SubHeaderText = styled.h3`
   font-weight: 600;
   margin-bottom: 1.25em;
 
-  @media(max-width: 768px) {
+  @media(max-width: 1024px) {
     font-size: 1.5em;
   }
 `
@@ -71,7 +73,7 @@ const SubHeaderText = styled.h3`
 const BodyText = styled.div`
   margin-bottom: 2.5em;
 
-  @media(max-width: 768px) {
+  @media(max-width: 1024px) {
     font-size: 16px;
     margin-bottom: 1em;
   }
@@ -100,6 +102,8 @@ const ScrollBtn = styled.a`
   margin: auto;
   font-size: 2em;
   text-decoration: none;
+  width: 100%;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
@@ -127,6 +131,8 @@ const ScrollUpBtn = styled.a`
   position: relative;
   margin: auto;
   text-decoration: none;
+  width: 100%;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
@@ -143,7 +149,7 @@ class IndexPage extends React.Component{
   render() {
     return (
       <ReactFullpage
-        anchors={['about', 'smarteq', 'foodiy', 'atheneum', 'zephyr', 'daytrip', 'blog']}
+        anchors={['about', 'experience', 'smarteq', 'foodiy', 'atheneum', 'zephyr', 'daytrip', 'blog']}
         licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
         render={({ state, fullpageApi }) => {
 
@@ -157,17 +163,26 @@ class IndexPage extends React.Component{
                       Lee Ma
                     </HeaderText>
                     <SubHeaderText>
-                      ECE 2022, University of Waterloo 🇨🇦
+                      2A Computer Engineering - UWaterloo 🇨🇦
                     </SubHeaderText>
                     <BodyText>Hot Sauce Enthusiast. Ski Slope Dominator. Software Developer.</BodyText>
-                      <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} href="https://github.com/lee-ma"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
-                      <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} href="https://linkedin.com/in/lma321"><FaLinkedin style={{verticalAlign: "text-top"}}/> Linkedin</Button>
-                      <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} target="_blank" href="https://drive.google.com/file/d/15Mkc4YgmGP5u7kNrnHz_Lgep9JInJxL2/view"><FaFileAlt style={{verticalAlign: "text-top"}}/> Resume</Button>
+                    <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} href="https://github.com/lee-ma"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
+                    <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} href="https://linkedin.com/in/lma321"><FaLinkedin style={{verticalAlign: "text-top"}}/> LinkedIn</Button>
+                    <Button defColor={'#484848'} hoverColor={'#feffff'} btnBackground={'#484848'} target="_blank" href="https://drive.google.com/file/d/15Mkc4YgmGP5u7kNrnHz_Lgep9JInJxL2/view"><FaFileAlt style={{verticalAlign: "text-top"}}/> Resume</Button>
                   </SummaryText>
                   <Visual>
                     <Img fluid={this.props.data.me.childImageSharp.fluid}></Img>
                   </Visual>
-                  <ScrollBtn black href="#foodiy"><FaChevronDown/></ScrollBtn>
+                  <ScrollBtn black href="#experience"><FaChevronDown/></ScrollBtn>
+                </Container>
+              </div>
+              <div className="section">
+                <Container style={{paddingTop: "5vh"}}>
+                  <HeaderText>
+                    Experience
+                  </HeaderText>
+                  <Experience/>
+                  <ScrollBtn black href="#smarteq" style={{width: "100%", textAlign: "center"}}><FaChevronDown/></ScrollBtn>
                 </Container>
               </div>
               <div className="section">
@@ -183,7 +198,7 @@ class IndexPage extends React.Component{
                         <p>Winner of Sunlife Best Health and Wellness Hack and TD Best Green Hack at QHacks 2019.<br></br>(React / SocketIO / Flask + Microsoft Azure Cognitive Science APIs)</p>
                       </BodyText>
                       <Button hoverColor={"#11213f"} href="https://github.com/lee-ma/smarteq"><FaGithub style={{verticalAlign: "text-top"}}/> Github</Button>
-                      <Button hoverColor={"#11213f"} href="https://www.youtube.com/watch?v=ouXz4nOBfD4"><FaYoutube style={{verticalAlign: "text-top"}}/> Video Demo</Button>
+                      <Button hoverColor={"#11213f"} href="https://www.youtube.com/watch?v=ouXz4nOBfD4"><FaYoutube style={{verticalAlign: "text-top"}}/> Video</Button>
                       <Button hoverColor={"#11213f"} href="https://devpost.com/software/smarteq"><FaDev style={{verticalAlign: "text-top"}}/> Devpost</Button>
                     </SummaryText>
                     <Visual>
