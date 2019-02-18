@@ -95,7 +95,7 @@ const Experience = () => {
           <HeaderText color="#EF8420">Bonfire Interactive Ltd.</HeaderText>
           <SubHeaderText>Fullstack Developer - Fall 2018</SubHeaderText>
           {
-            window.innerWidth > 425 ? <BodyText>Helping procurement professionals make better decisions.</BodyText> : null
+            typeof window !== 'undefined' && window.innerWidth > 425 ? <BodyText>Helping procurement professionals make better decisions.</BodyText> : null
           }
         </Description>
       </Section>
@@ -105,7 +105,7 @@ const Experience = () => {
           <HeaderText color="#ffd045">University of Waterloo</HeaderText>
           <SubHeaderText>Computing Assistant - Winter 2018</SubHeaderText>
           {
-            window.innerWidth > 425 ? <BodyText>IT services, static web templates, and Powershell scripting.</BodyText> : null
+            typeof window !== 'undefined' && window.innerWidth > 425 ? <BodyText>IT services, static web templates, and Powershell scripting.</BodyText> : null
           }
         </Description>
       </Section>
