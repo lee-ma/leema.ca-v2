@@ -16,17 +16,6 @@ const Container = styled.div`
   }
 `
 
-const HugeHeader = styled.h1`
-  font-size: 3em;
-  margin-bottom: 1em;
-  text-align: left;
-
-  @media(max-width: 425px) {
-    font-size: 2.5em;
-    margin-bottom: 0.75em;
-  }
-`
-
 const Section = styled.a`
   display: flex;
   flex-wrap: wrap;
@@ -37,6 +26,9 @@ const Section = styled.a`
   @media(max-width: 768px) {
     margin-bottom: 2.5em;
   }
+  @media(max-width: 425px) {
+    margin-bottom: 0.5em;
+  }
 `
 
 const Logo = styled.img`
@@ -45,6 +37,7 @@ const Logo = styled.img`
   margin-right: 5em;
   
   @media(max-width: 425px) {
+    height: 5em;
     margin: auto;
   }
 `
@@ -55,7 +48,7 @@ const HeaderText = styled.h1`
   color: ${props=> props.color || "#484848"};
 
   @media(max-width: 425px) {
-    font-size: 1.75em;
+    font-size: 1.25em;
     text-align: center;
   }
 `
@@ -81,19 +74,38 @@ const BodyText = styled.div`
 `
 
 const Description = styled.div`
+  @media(max-width: 768px) {
+    text-align: left;
+  }
   @media(max-width: 425px) {
     width: 100%;
+    margin-top: -5px;
+    text-align: center;
   }
 `
 
 const Experience = () => {
   return (
     <Container backgroundColor={'#feffff'}>
+      <Section href="https://riverpayment.com">
+        <Logo src="https://events.nrf.com/annual2019/CUSTOM/mapp/RiverPay_AN19.png"/>
+        <Description>
+          <HeaderText color="#139fdd">RiverPay Inc.</HeaderText>
+          <SubHeaderText>Software Engineering Intern - Summer 2019</SubHeaderText>
+          <br/>
+          <SubHeaderText>Palo Alto, California</SubHeaderText>
+          {
+            typeof window !== 'undefined' && window.innerWidth > 425 ? <BodyText>Payment service provider for over 12,000 merchants .</BodyText> : null
+          }
+        </Description>
+      </Section>
       <Section href="https://gobonfire.com">
         <Logo src="https://media.licdn.com/dms/image/C4E0BAQEo02kE2JwPEg/company-logo_200_200/0?e=2159024400&v=beta&t=8a8owbqvjoWy9VdgeW2gJZ6Rul0D0IxEmOBZ4klBCgc"/>
         <Description>
           <HeaderText color="#EF8420">Bonfire Interactive Ltd.</HeaderText>
-          <SubHeaderText>Fullstack Developer - Fall 2018</SubHeaderText>
+          <SubHeaderText>Software Engineering Intern - Fall 2018</SubHeaderText>
+          <br/>
+          <SubHeaderText>Kitchener, Ontario</SubHeaderText>
           {
             typeof window !== 'undefined' && window.innerWidth > 425 ? <BodyText>Helping procurement professionals make better decisions.</BodyText> : null
           }
@@ -104,6 +116,8 @@ const Experience = () => {
         <Description>
           <HeaderText color="#ffd045">University of Waterloo</HeaderText>
           <SubHeaderText>Computing Assistant - Winter 2018</SubHeaderText>
+          <br/>
+          <SubHeaderText>Waterloo, Ontario</SubHeaderText>
           {
             typeof window !== 'undefined' && window.innerWidth > 425 ? <BodyText>IT services, static web templates, and Powershell scripting.</BodyText> : null
           }
