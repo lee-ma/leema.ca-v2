@@ -91,11 +91,11 @@ const Experience = () => {
         <Logo src="https://events.nrf.com/annual2019/CUSTOM/mapp/RiverPay_AN19.png"/>
         <Description>
           <HeaderText color="#139fdd">RiverPay Inc.</HeaderText>
-          <SubHeaderText>Software Engineering Intern - Summer 2019</SubHeaderText>
+          <SubHeaderText>Software Engineering Co-op - Summer 2019</SubHeaderText>
           <br/>
-          <SubHeaderText>Palo Alto, California</SubHeaderText>
+          <SubHeaderText>San Francisco Bay Area, California</SubHeaderText>
           {
-            typeof window !== 'undefined' && window.innerWidth > 425 ? <BodyText>Payment service provider for over 12,000 merchants .</BodyText> : null
+            typeof window !== 'undefined' && window.innerWidth > 425 ? <BodyText>Payment service provider for 12,000+ merchants globally.</BodyText> : null
           }
         </Description>
       </Section>
@@ -103,7 +103,7 @@ const Experience = () => {
         <Logo src="https://media.licdn.com/dms/image/C4E0BAQEo02kE2JwPEg/company-logo_200_200/0?e=2159024400&v=beta&t=8a8owbqvjoWy9VdgeW2gJZ6Rul0D0IxEmOBZ4klBCgc"/>
         <Description>
           <HeaderText color="#EF8420">Bonfire Interactive Ltd.</HeaderText>
-          <SubHeaderText>Software Engineering Intern - Fall 2018</SubHeaderText>
+          <SubHeaderText>Software Engineering Co-op - Fall 2018</SubHeaderText>
           <br/>
           <SubHeaderText>Kitchener, Ontario</SubHeaderText>
           {
