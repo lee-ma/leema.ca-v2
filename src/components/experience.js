@@ -95,7 +95,7 @@ const Experience = () => {
           <br/>
           <SubHeaderText>San Francisco Bay Area, California</SubHeaderText>
           {
-            typeof window !== 'undefined' && window.innerWidth > 425 ? <BodyText>Payment service provider for 12,000+ merchants globally.</BodyText> : null
+            typeof window !== 'undefined' && window.innerWidth > 425 ? <BodyText>Payment platform for thousands of merchants globally.</BodyText> : null
           }
         </Description>
       </Section>
